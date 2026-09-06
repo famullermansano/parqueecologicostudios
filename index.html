@@ -143,9 +143,14 @@
     </header>
 
     <!-- Conteúdo Principal com o Frame -->
-    <main id="conteudo-principal">
-        <iframe src="https://nobeds.app/OnePage/1508199307" name="conteudo-frame" class="meu-frame"></iframe>
-    </main>
-
+   <iframe id="nobeds-booking-frame" src="https://nobeds.app/DirectForm/Step/1508199307" style="width: 100%; border: none; min-height: 600px;" scrolling="no"></iframe>
+<script>
+window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'nobeds-resize') {
+        document.getElementById('nobeds-booking-frame').style.height = e.data.height + 'px';
+    }
+}, false);
+</script>
+    
 </body>
 </html>
